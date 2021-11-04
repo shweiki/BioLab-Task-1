@@ -11,14 +11,14 @@ namespace DBL
     public class Class1DBL
     {
         #region Test 1 
-        public List<POCO.fixedParameter> GetData()
+        public POCO.fixedParameter GetData()
         {
             DAL_FixedParameter oclass1DAL = new DAL_FixedParameter();
             DataSet DS = oclass1DAL.Get();
 
             //link 
 
-            List<POCO.fixedParameter> LAttribute = new List<POCO.fixedParameter>();
+            POCO.fixedParameter LAttribute = new POCO.fixedParameter();
 
             if (DS != null)
             {
@@ -28,14 +28,14 @@ namespace DBL
                     for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
                     {
                         currentRow = DS.Tables[0].Rows[i];
-                        LAttribute.Add(new POCO.fixedParameter(
+                        LAttribute = new POCO.fixedParameter(
                             (!(currentRow["id"] is DBNull)) ? Convert.ToInt32(currentRow["id"]) : 0,
                             (!(currentRow["Hourovertime"] is DBNull)) ? Convert.ToDecimal(currentRow["Hourovertime"]) : 0,
                             (!(currentRow["highestsalary"] is DBNull)) ? Convert.ToDecimal(currentRow["highestsalary"]) : 0,
                             (!(currentRow["expmarroed"] is DBNull)) ? Convert.ToDecimal(currentRow["expmarroed"]) : 0,
                             (!(currentRow["socialper"] is DBNull)) ? Convert.ToDecimal(currentRow["socialper"]) : 0,
                             (!(currentRow["expsingle"] is DBNull)) ? Convert.ToDecimal(currentRow["expsingle"]) : 0
-                          ));
+                          );
                     }
                 }
             }

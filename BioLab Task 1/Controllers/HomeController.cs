@@ -14,9 +14,8 @@ namespace BioLab_Task_1.Controllers
         {           
 
             Class1DBL oClass1DBL = new Class1DBL();
-
-            List<POCO.fixedParameter> x = oClass1DBL.GetData();
-            return View();
+            POCO.fixedParameter XfixedParameter = oClass1DBL.GetData();
+            return View(XfixedParameter);
         }
         [HttpPost]
         public ActionResult Edit(fixedParameter FP)
