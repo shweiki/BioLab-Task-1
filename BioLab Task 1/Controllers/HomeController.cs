@@ -15,15 +15,20 @@ namespace BioLab_Task_1.Controllers
 
             Class1DBL oClass1DBL = new Class1DBL();
 
-            List<POCO.Attendance> x = oClass1DBL.selectData();
+            List<POCO.fixedParameter> x = oClass1DBL.GetData();
             return View();
         }
-
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Edit(fixedParameter FP)
         {
             ViewBag.Message = "Your application description page.";
+            Class1DBL oClass1DBL = new Class1DBL();
 
-            return View();
+            if (oClass1DBL.SetData(FP))
+
+                return RedirectToAction("Index");
+            else
+                return RedirectToAction("Index");
         }
 
         public ActionResult Contact()
