@@ -28,7 +28,8 @@ namespace BioLab_Task_1
             "~/Scripts/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js",
             "~/Scripts/dff/dff.js",
             "~/Scripts/multiselect/js/jquery.multi-select.js",
-            "~/Scripts/Custom/FixedParameter.js"
+            "~/Scripts/Custom/FixedParameter.js",
+            "~/Scripts/Custom/InstallSalariesAndSocialSecurity.js"
                      ));
 
       

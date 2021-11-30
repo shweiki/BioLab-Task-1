@@ -1,0 +1,76 @@
+﻿@model IEnumerable<POCO.SalaryBasicInformation>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullAnname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.saljd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.socialj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tax_pass_value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emptax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wifetax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.month_count)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullAnname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saljd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.socialj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tax_pass_value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emptax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wifetax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.month_count)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

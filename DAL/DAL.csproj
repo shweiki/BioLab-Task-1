@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Hr_Salary_Basicinformation_Select.cs" />
+    <Compile Include="DAL_LocationBranch.cs" />
+    <Compile Include="DAL_HRDepartment.cs" />
     <Compile Include="DAL_FixedParameter.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

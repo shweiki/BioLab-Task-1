@@ -8,13 +8,14 @@ using System.Web.Mvc;
 
 namespace BioLab_Task_1.Controllers
 {
-    public class HomeController : Controller
+    public class EmployeeController : Controller
     {
-        public ActionResult Index()
-        {           
-            return View();
+        public PartialViewResult Select()
+        {
+   
+            return PartialView();
+
         }
       
-
     }
 }

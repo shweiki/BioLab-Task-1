@@ -120,6 +120,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\FixedParameterController.cs" />
+    <Compile Include="Controllers\InstallSalariesAndSocialSecurityController.cs" />
+    <Compile Include="Controllers\HRDepartmentController.cs" />
+    <Compile Include="Controllers\LocationBranchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -465,6 +470,7 @@
     <Content Include="Content\js\mask.init.js" />
     <Content Include="Content\js\morris-data.js" />
     <Content Include="Scripts\Custom\FixedParameter.js" />
+    <Content Include="Scripts\Custom\InstallSalariesAndSocialSecurity.js" />
     <Content Include="Scripts\dff\dff.js" />
     <Content Include="Scripts\jquery.sparkline.min.js" />
     <Content Include="Scripts\multiselect\css\multi-select.css" />
@@ -1222,8 +1228,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ExtraVacationInsertArea.cshtml" />
   </ItemGroup>
@@ -1299,6 +1303,15 @@
     <Content Include="Scripts\bootstrap-tagsinput\dist\bootstrap-tagsinput.less" />
     <Content Include="Scripts\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js.map" />
     <Content Include="Scripts\bootstrap-tagsinput\dist\bootstrap-tagsinput.zip" />
+    <Content Include="Views\InstallSalariesAndSocialSecurity\Index.cshtml" />
+    <Content Include="Views\LocationBranch\Select.cshtml" />
+    <Content Include="Views\HRDepartment\Select.cshtml" />
+    <Content Include="Views\Employee\Select.cshtml" />
+    <Content Include="Views\InstallSalariesAndSocialSecurity\SalaryTable.cshtml" />
+    <Content Include="Views\InstallSalariesAndSocialSecurity\SearchForm.cshtml" />
+    <Content Include="Views\FixedParameter\Index.cshtml" />
+    <Content Include="Views\InstallSalariesAndSocialSecurity\EditSalaryBasicInformation.cshtml" />
+    <Content Include="Views\InstallSalariesAndSocialSecurity\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBL\DBL.csproj">

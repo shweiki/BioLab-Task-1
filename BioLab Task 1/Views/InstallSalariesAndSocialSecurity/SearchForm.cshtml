@@ -1,0 +1,39 @@
+﻿@using (Ajax.BeginForm("SalariesAndSocialSecuritySearch", "Administrator", new AjaxOptions { UpdateTargetId = "DisplayAreaMain", OnSuccess = "SuccessUpdateDepartment", OnFailure = "FailedUpdateDepartment", OnComplete = "ClearInputFields", OnBegin = "RestTableArea", HttpMethod = "POST", }, new { id = "FormDepartment", autocomplete = "off" }))
+{
+<div class="row">
+    <div class="col-md-4">
+        @{Html.RenderAction("Select", "LocationBranch");}
+    </div>
+    <div class="col-md-4">
+        @{Html.RenderAction("Select", "HRDepartment");}
+    </div>
+    <div class="form-group col-md-4">
+        @{Html.RenderAction("Select", "Employee");}
+    </div>
+</div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <div class="form-group has-danger row">
+                <label class="control-label text-right col-md-5">From Emp. No</label>
+                <div class="col-md-7">
+                    <input id="FromEmpNo" name="FromEmpNo" class="vertical-spin" type="text" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <div class="form-group has-danger row">
+                <label class="control-label text-right col-md-5">To Emp. No</label>
+                <div class="col-md-7">
+                    <input id="ToEmpNo" name="ToEmpNo" class="vertical-spin" type="text" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="vertical-spin">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions col-md-4">
+            <button type="reset" class="btn btn-inverse"><i class="fa fa-eraser"></i>Clear</button>
+
+            <button type="submit" class="btn btn-success"> <i class="fa fa-search"></i> Search</button>
+        </div>
+    </div>
+
+}
