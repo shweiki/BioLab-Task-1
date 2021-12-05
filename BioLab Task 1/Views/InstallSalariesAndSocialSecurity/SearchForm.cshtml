@@ -1,4 +1,6 @@
-﻿@using (Ajax.BeginForm("SalariesAndSocialSecuritySearch", "Administrator", new AjaxOptions { UpdateTargetId = "DisplayAreaMain", OnSuccess = "SuccessUpdateDepartment", OnFailure = "FailedUpdateDepartment", OnComplete = "ClearInputFields", OnBegin = "RestTableArea", HttpMethod = "POST", }, new { id = "FormDepartment", autocomplete = "off" }))
+﻿@using (Ajax.BeginForm("SalariesAndSocialSecuritySearch", "InstallSalariesAndSocialSecurity", new AjaxOptions { UpdateTargetId = "DisplayAreaMain",
+    OnSuccess = "SuccessUpdateDepartment", OnFailure = "FailedUpdateDepartment", OnComplete = "ClearInputFields",
+    OnBegin = "RestTableArea", HttpMethod = "POST", }, new { id = "FormDepartment", autocomplete = "off" }))
 {
 <div class="row">
     <div class="col-md-4">
@@ -37,3 +39,9 @@
     </div>
 
 }
+<script>
+    function RestTableArea() { }
+    function SuccessUpdateDepartment() { }
+    function FailedUpdateDepartment() { }
+    function ClearInputFields() { }
+</script>

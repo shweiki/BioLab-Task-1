@@ -23,8 +23,8 @@ namespace BioLab_Task_1.Controllers
 
             DBL_Hr_Salary_Basicinformation_Select oClass1DBL = new DBL_Hr_Salary_Basicinformation_Select();
             List<POCO.SalaryBasicInformation> XSalaryBasicInformation = oClass1DBL.GetData(FromEmpNo, ToEmpNo, SelectEmpName, SelectBranch, SelcetDepartment);
-            return View("Index", XSalaryBasicInformation);
-            //return PartialView("SalaryTable", XSalaryBasicInformation);
+            //return View("Index", XSalaryBasicInformation);
+            return PartialView("SalaryTable", XSalaryBasicInformation);
         }
 
 
