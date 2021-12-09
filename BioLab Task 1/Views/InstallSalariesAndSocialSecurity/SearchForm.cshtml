@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-actions col-md-4">
-            <button type="reset" class="btn btn-inverse"><i class="fa fa-eraser"></i>Clear</button>
+            <button type="reset" class="btn btn-inverse" onclick="RestDefault()"><i class="fa fa-eraser"></i>Clear</button>
 
             <button type="submit" class="btn btn-success"> <i class="fa fa-search"></i> Search</button>
         </div>
@@ -43,5 +43,14 @@
     function RestTableArea() { }
     function SuccessUpdateDepartment() { }
     function FailedUpdateDepartment() { }
-    function ClearInputFields() { }
+    function ClearInputFields() {
+        console.log("Clear")
+    }
+    function RestDefault() {
+        $('#SelectBranch').val("").change();
+        $('#SelectEmpName').val("").change();
+        $('#SelcetDepartment').val("").change();
+        $('#FromEmpNo').val("")
+        $('#ToEmpNo').val("")
+    }
 </script>
