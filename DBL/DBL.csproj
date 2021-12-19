@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBL_BonusesOpponent.cs" />
+    <Compile Include="DBL_PremiumsDiscountsStaffGet.cs" />
     <Compile Include="DBL_Hr_Salary_Basicinformation_Select.cs" />
     <Compile Include="DBL_LocationBranch.cs" />
     <Compile Include="DBL_HRDepartment.cs" />

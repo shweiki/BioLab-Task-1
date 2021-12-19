@@ -1,0 +1,31 @@
+﻿
+
+
+@model List<POCO.BonusesOpponent>
+
+<div class="form-group has-danger row">
+    <label class="control-label text-right col-md-4">Bonuses & Opponent</label>
+    <div class="col-md-8">
+        <select id="SelcetBonusesOpponent" name="SelcetBonusesOpponent" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+            @if (Model.Count > 0)
+            {
+                <option value="" selected>All</option>
+                foreach (POCO.BonusesOpponent item in Model)
+                {
+                    <option value="@item.id">@item.desc</option>
+
+                }
+
+            }
+            else
+            {
+                <option value="">There is no result found.</option>
+
+            }
+        </select>
+    </div>
+</div>
+
+
+
+
