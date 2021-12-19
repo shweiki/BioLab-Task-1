@@ -19,7 +19,6 @@ namespace BioLab_Task_1
                          "~/Scripts/jquery.sparkline.min.js",
                          "~/Scripts/custom.min.js"
                         ));
-
             bundles.Add(new ScriptBundle("~/bundles/plugins").Include(
             "~/Scripts/switchery/dist/switchery.min.js",
             "~/Scripts/select2/dist/js/select2.full.min.js",
@@ -31,8 +30,6 @@ namespace BioLab_Task_1
             "~/Scripts/Custom/FixedParameter.js",
             "~/Scripts/Custom/InstallSalariesAndSocialSecurity.js"
                      ));
-
-      
                       bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-datepicker/bootstrap-datepicker.min.css",
