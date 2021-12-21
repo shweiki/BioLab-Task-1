@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BonusesOpponent.cs" />
     <Compile Include="PremiumsDiscountsStaff.cs" />
+    <Compile Include="StaffBasicInformation.cs" />
     <Compile Include="SalaryBasicInformation.cs" />
     <Compile Include="LocationBranch.cs" />
     <Compile Include="Department.cs" />

@@ -12,6 +12,14 @@ namespace BioLab_Task_1.Controllers
     {
         public PartialViewResult Select()
         {
+            DBL_StaffBasicinformation_Select oClass1DBL = new DBL_StaffBasicinformation_Select();
+            List<POCO.StaffBasicInformation> XStaffBasicinformation = oClass1DBL.GetData(null ,null ,null);
+
+            return PartialView(XStaffBasicinformation);
+
+        }  
+        public PartialViewResult Input()
+        {
    
             return PartialView();
 

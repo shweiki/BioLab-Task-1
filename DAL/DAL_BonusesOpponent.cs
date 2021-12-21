@@ -23,7 +23,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@disable", null);*/
 
                 cmd.Connection = new SqlConnection(GotoDBKey("SCon"));
-                cmd.CommandText = "DAL_BonusesOpponent_Select";
+                cmd.CommandText = "SD_Premiums_discounts";
                 return ExecuteDataSet(cmd);
             }
         }

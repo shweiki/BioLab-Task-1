@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBL_BonusesOpponent.cs" />
+    <Compile Include="DBL_StaffBasicinformation_Select.cs" />
     <Compile Include="DBL_PremiumsDiscountsStaffGet.cs" />
     <Compile Include="DBL_Hr_Salary_Basicinformation_Select.cs" />
     <Compile Include="DBL_LocationBranch.cs" />

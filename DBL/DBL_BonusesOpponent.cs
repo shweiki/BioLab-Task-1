@@ -30,10 +30,12 @@ namespace DBL
                         currentRow = DS.Tables[0].Rows[i];
                         LAttribute.Add (new POCO.BonusesOpponent(
                         (!(currentRow["id"] is DBNull)) ? Convert.ToInt32(currentRow["id"]) : 0,
-                        currentRow["desc"].ToString(),
-                        (!(currentRow["value"] is DBNull)) ? Convert.ToDecimal(currentRow["value"]) : 0,
-                        (!(currentRow["disable"] is DBNull)) ? Convert.ToInt32(currentRow["disable"]) : 0
-                          ));
+                        currentRow["descc"].ToString(),
+                        (!(currentRow["flag"] is DBNull)) ? Convert.ToInt32(currentRow["id"]) : 0,
+                        (!(currentRow["social"] is DBNull)) ? Convert.ToInt32(currentRow["id"]) : 0,
+                        (!(currentRow["tax"] is DBNull)) ? Convert.ToInt32(currentRow["id"]) : 0,
+                        currentRow["notes"].ToString()
+                        ));
                     }
                 }
             }

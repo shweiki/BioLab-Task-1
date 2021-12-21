@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_BonusesOpponent.cs" />
+    <Compile Include="DAL_StaffBasicinformation_P.cs" />
     <Compile Include="DAL_PremiumsDiscountStaff_P.cs" />
     <Compile Include="DAL_Hr_Salary_Basicinformation_Select.cs" />
     <Compile Include="DAL_LocationBranch.cs" />

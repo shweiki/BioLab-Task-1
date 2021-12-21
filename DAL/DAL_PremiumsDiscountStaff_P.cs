@@ -11,12 +11,12 @@ namespace DAL
     public class DAL_PremiumsDiscountStaff_P : Database
     {
         #region "DAL_PremiumsDiscountStaff_P"
-        public DataSet Get(int? PD, DateTime fromdate, DateTime todate, String option,int? empno, int? empno2, string empname, int? branchno, int? departmentno)
+        public DataSet Get(int? descno, DateTime? fromdate, DateTime? todate, String option,int? empno, int? empno2, string empname, int? branchno, int? departmentno)
         {
             SqlCommand cmd = new SqlCommand();
             using (cmd)
             {
-              cmd.Parameters.AddWithValue("@PD", PD);
+              cmd.Parameters.AddWithValue("@descno", descno);
               cmd.Parameters.AddWithValue("@option", option);
               cmd.Parameters.AddWithValue("@todate", todate);
               cmd.Parameters.AddWithValue("@fromdate", fromdate);
@@ -27,7 +27,7 @@ namespace DAL
               cmd.Parameters.AddWithValue("@departmentno", departmentno);
 
                 cmd.Connection = new SqlConnection(GotoDBKey("SCon"));
-               // cmd.CommandText = "hr_salary_basicinformation_Select";
+                cmd.CommandText = "Premiums_discounts_staff_list";
                 return ExecuteDataSet(cmd);
             }
         }

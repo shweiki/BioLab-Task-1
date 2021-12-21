@@ -18,11 +18,11 @@ namespace BioLab_Task_1.Controllers
         }
         
         [HttpPost]
-        public ActionResult SalariesAndSocialSecuritySearch(int? FromEmpNo, int? ToEmpNo, string SelectEmpName, int? SelectBranch, int? SelcetDepartment)
+        public ActionResult SalariesAndSocialSecuritySearch(int? FromEmpNo, int? ToEmpNo, string SelectEmpNo, int? SelectBranch, int? SelcetDepartment)
         {
 
             DBL_Hr_Salary_Basicinformation_Select oClass1DBL = new DBL_Hr_Salary_Basicinformation_Select();
-            List<POCO.SalaryBasicInformation> XSalaryBasicInformation = oClass1DBL.GetData(FromEmpNo, ToEmpNo, SelectEmpName, SelectBranch, SelcetDepartment);
+            List<POCO.SalaryBasicInformation> XSalaryBasicInformation = oClass1DBL.GetData(FromEmpNo, ToEmpNo, SelectEmpNo, SelectBranch, SelcetDepartment);
             //return View("Index", XSalaryBasicInformation);
             return PartialView("SalaryTable", XSalaryBasicInformation);
         }

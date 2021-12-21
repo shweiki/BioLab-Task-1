@@ -1595,6 +1595,7 @@
     <Content Include="Scripts\jquery-asColorPicker-master\package.json" />
     <Content Include="Scripts\jquery-asColorPicker-master\README.md" />
     <Content Include="Scripts\jquery-asColorPicker-master\src\scss\asColorPicker.scss" />
+    <Content Include="Views\Employee\Input.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBL\DBL.csproj">

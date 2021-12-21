@@ -10,24 +10,30 @@ namespace POCO
     {
 
         public int id  { get; set; }
-        public string desc  { get; set; }
-        public decimal value { get; set; }
-        public int disable  { get; set; }
-
+        public string descc { get; set; }
+        public int flag { get; set; }
+        public int social { get; set; }
+        public int tax { get; set; }
+        public string notes { get; set; }
+    
         public BonusesOpponent()
         {
             this.id = id;
-            this.desc = desc;
-            this.value = value;
-            this.disable = disable;
+            this.descc = descc;
+            this.flag = flag;
+            this.social = social;
+            this.tax = tax;
+            this.notes = notes;
         }
-        public BonusesOpponent( int id, string desc, decimal value, int disable)
+        public BonusesOpponent( int id, string descc, int flag, int social,int tax , string notes)
         {
 
             this.id = id;
-            this.desc = desc;
-            this.value = value;
-            this.disable = disable;
+            this.descc = descc;
+            this.flag = flag;
+            this.social = social;
+            this.tax = tax;
+            this.notes = notes;
         }
 
     }

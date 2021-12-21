@@ -1,7 +1,7 @@
 ﻿
 $(function () {
 
-    $("#SelectEmpName").select2();
+    $("#SelectEmpNo").select2();
     $("#SelectBranch").select2();
     $("#SelcetDepartment").select2();
     

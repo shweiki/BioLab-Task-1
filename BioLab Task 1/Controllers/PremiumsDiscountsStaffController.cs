@@ -18,11 +18,11 @@ namespace BioLab_Task_1.Controllers
         }
         
         [HttpPost]
-        public ActionResult PremiumsDiscountsStaffSearch(int? SelectPD, DateTime FromDate, DateTime ToDate, String Option , int? FromEmpNo, int? ToEmpNo, string SelectEmpName, int? SelectBranch, int? SelcetDepartment)
+        public ActionResult PremiumsDiscountsStaffSearch(int? SelcetBonusesOpponent, DateTime? FromDate, DateTime? ToDate, String Option , int? FromEmpNo, int? ToEmpNo, string EmpName, int? SelectBranch, int? SelcetDepartment)
         {
 
             DBL_PremiumsDiscountsStaffGet oClass1DBL = new DBL_PremiumsDiscountsStaffGet();
-            List<POCO.PremiumsDiscountsStaff> XPremiumsDiscountsStaffInformation = oClass1DBL.GetData(SelectPD, FromDate , ToDate, Option, FromEmpNo, ToEmpNo, SelectEmpName, SelectBranch, SelcetDepartment);
+            List<POCO.PremiumsDiscountsStaff> XPremiumsDiscountsStaffInformation = oClass1DBL.GetData(SelcetBonusesOpponent, FromDate , ToDate, Option, FromEmpNo, ToEmpNo, EmpName, SelectBranch, SelcetDepartment);
 
             return PartialView("PremiumsDiscountsStaffSearch", XPremiumsDiscountsStaffInformation);
         }

@@ -11,10 +11,10 @@ namespace DBL
     public class DBL_PremiumsDiscountsStaffGet
     {
         #region Test 2
-        public List<POCO.PremiumsDiscountsStaff> GetData(int? PD, DateTime fromdate, DateTime todate, String option, int? empno, int? empno2, string empname, int? branchno, int? departmentno)
+        public List<POCO.PremiumsDiscountsStaff> GetData(int? descno, DateTime? fromdate, DateTime? todate, String option, int? empno, int? empno2, string empname, int? branchno, int? departmentno)
         {
             DAL_PremiumsDiscountStaff_P oclass1DAL = new DAL_PremiumsDiscountStaff_P();
-            DataSet DS = oclass1DAL.Get(PD , fromdate , todate , option,empno,  empno2,  empname,  branchno,  departmentno);
+            DataSet DS = oclass1DAL.Get(descno, fromdate , todate , option,empno,  empno2,  empname,  branchno,  departmentno);
 
             //link 
 
@@ -31,10 +31,10 @@ namespace DBL
                         LAttribute.Add (new POCO.PremiumsDiscountsStaff(
                         (!(currentRow["empno"] is DBNull)) ? Convert.ToInt32(currentRow["empno"]) : 0,
                         currentRow["FullAnname"].ToString(),
-                        currentRow["desc"].ToString(),
+                        currentRow["descc"].ToString(),
                              Convert.ToDateTime(currentRow["fromdate"]) ,
                             Convert.ToDateTime(currentRow["todate"]) ,
-                          Convert.ToDecimal(currentRow["value"]) 
+                          Convert.ToDecimal(currentRow["amount"]) 
                           
                           ));
                     }
