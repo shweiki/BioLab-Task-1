@@ -26,6 +26,15 @@ namespace BioLab_Task_1.Controllers
 
             return PartialView("PremiumsDiscountsStaffSearch", XPremiumsDiscountsStaffInformation);
         }
+        [HttpPost]
+        public ActionResult PremiumsDiscountsStaffCreate(int? SelcetBonusesOpponent, DateTime? FromDate, DateTime? ToDate, String Option , int? FromEmpNo, int? ToEmpNo, string EmpName, int? SelectBranch, int? SelcetDepartment ,decimal? PDValue)
+        {
+
+            DBL_PremiumsDiscountsStaffGet oClass1DBL = new DBL_PremiumsDiscountsStaffGet();
+            List<POCO.PremiumsDiscountsStaff> XPremiumsDiscountsStaffInformation = oClass1DBL.GetDataForCreate(SelcetBonusesOpponent, FromDate , ToDate, Option, FromEmpNo, ToEmpNo, EmpName, SelectBranch, SelcetDepartment , PDValue);
+
+            return PartialView("PremiumsDiscountsStaffCreate", XPremiumsDiscountsStaffInformation);
+        }
 
 
     }

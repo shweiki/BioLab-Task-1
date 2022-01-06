@@ -11,29 +11,30 @@
         </div>
     </div>
 </div>
-    <!-- Column --><div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#PremiumsDiscountsStaffSearch" role="tab"><span><i class="fa fa-search"></i></span>  <span class="hidden-xs-down">Search</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PremiumsDiscountsStaffCreateNew" role="tab"><span><i class="fa fa-plus-circle"></i></span>  <span class="hidden-xs-down">Create New</span></a> </li>
-                    </ul>
-                    <div class="tab-content tabcontent-border">
-                        <div class="tab-pane active" id="PremiumsDiscountsStaffSearch" role="tabpanel">
-                            <div class="row p-20" id="DisplayAreaMain">
-                                @{ Html.RenderPartial("PremiumsDiscountsStaffSearch", Model);}
-                            </div>
+<!-- Column --><div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div id="tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#PremiumsDiscountsStaffSearch" role="tab"><span><i class="fa fa-search"></i></span>  <span class="hidden-xs-down">Search</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PremiumsDiscountsStaffCreateNew" role="tab"><span><i class="fa fa-plus-circle"></i></span>  <span class="hidden-xs-down">Create New</span></a> </li>
+                </ul>
+                <div  class="tab-content customtab ">
+                    <div class="tab-pane active" id="PremiumsDiscountsStaffSearch" role="tabpanel">
+                        <div class="row p-20" id="DisplayAreaSearch">
+                            @{ Html.RenderPartial("PremiumsDiscountsStaffSearch", Model);}
                         </div>
-                        <div class="tab-pane p-20" id="PremiumsDiscountsStaffCreateNew" role="tabpanel">
-                            <div class="row" id="DisplayAreaMain">
-                               123132
-                            </div>
-                        </div>                     
                     </div>
-             
+                    <div class="tab-pane p-20" id="PremiumsDiscountsStaffCreateNew" role="tabpanel">
+                        <div class="row" id="DisplayAreaCreateNew">
+                            @{ Html.RenderPartial("PremiumsDiscountsStaffCreate", Model);}
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-
     </div>
+
+</div>
+

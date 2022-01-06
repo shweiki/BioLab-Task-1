@@ -9,9 +9,8 @@ namespace BioLab_Task_1
         public static void RegisterBundles(BundleCollection bundles)
         {
          bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery.min.js",
+                        "~/Scripts/jquery-{version}.js",
                         "~/Scripts/popper.min.js",
-                         "~/Scripts/bootstrap.min.js",
                          "~/Scripts/perfect-scrollbar.jquery.min.js",
                          "~/Scripts/waves.js",
                          "~/Scripts/sidebarmenu.js",
@@ -19,6 +18,9 @@ namespace BioLab_Task_1
                          "~/Scripts/jquery.sparkline.min.js",
                          "~/Scripts/custom.min.js"
                         ));
+        bundles.Add(new Bundle("~/bundles/bootstrap").Include(
+                         "~/Scripts/bootstrap.min.js"
+                         ));
 
          bundles.Add(new ScriptBundle("~/bundles/plugins").Include(
                         "~/Scripts/switchery/dist/switchery.min.js",

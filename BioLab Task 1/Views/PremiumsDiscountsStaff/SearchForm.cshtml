@@ -1,12 +1,12 @@
 ﻿@using (Ajax.BeginForm("PremiumsDiscountsStaffSearch", "PremiumsDiscountsStaff", new AjaxOptions
 {
-    UpdateTargetId = "DisplayAreaMain",
+    UpdateTargetId = "DisplayAreaSearch",
     OnSuccess = "SuccessUpdateDepartment",
     OnFailure = "FailedUpdateDepartment",
     OnComplete = "ClearInputFields",
     OnBegin = "RestTableArea",
     HttpMethod = "POST",
-}, new { id = "FormPremiumsDiscountsStaffSearch", autocomplete = "off" }))
+}, new { id = "FormPremiumsDiscountsStaffSearch", autocomplete = "on" }))
 {
     <div class="row">
         <div class="col-md-6">
@@ -37,59 +37,78 @@
         <div class="form-group col-md-4">
             @{Html.RenderAction("Input", "Employee");}
         </div>
-
     </div>
     <div class="row">
         <div class="form-group col-md-6">
             @{Html.RenderAction("Select", "BonusesOpponent");}
-
+            <h6 id="BonusesOpponentCheckValid" style="color: red;"></h6> 
         </div>
         <div class="form-group col-md-6">
             <div class="input-daterange input-group" id="date-range">
-                <input type="text" class="form-control" name="FromDate" />
+                <input type="text" class="form-control" name="FromDate" id="FromDate" />
                 <div class="input-group-append">
                     <span class="input-group-text bg-info b-0 text-white">TO</span>
                 </div>
-                <input type="text" class="form-control" name="ToDate" />
-            </div>
+                <input type="text" class="form-control" name="ToDate" id="ToDate" />
+            </div><h6 id="DateCheckValid" style="color: red;"></h6>
         </div>
+    </div> 
 
-
-    </div>
     <div class="row">
-               <div class="form-group col-md-8" style="display:flex;justify-content:space-around;">
-                   <div class="custom-control custom-radio">
-                       <input type="radio" id="OptionRadio1" name="OptionRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="OptionRadio1">New Value</label>
-                   </div>
-                   <div class="custom-control custom-radio">
-                       <input type="radio" id="OptionRadio2" name="OptionRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="OptionRadio2">Salary same yrs</label>
-                   </div>
-                   <div class="custom-control custom-radio">
-                       <input type="radio" id="OptionRadio3" name="OptionRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="OptionRadio3">Salary last yrs</label>
-                   </div>
-                   <div class="custom-control custom-radio">
-                       <input type="radio" id="OptionRadio4" name="OptionRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="OptionRadio4">% Salary yrs</label>
-                   </div>
-               </div>
-               <div class="form-actions col-md-4">
+        <div class="form-group col-md-9" style="display:flex;justify-content:space-around;">
+            <div class="custom-control custom-radio">
+                <input type="radio" value="NewValue" id="OptionRadio1" name="OptionRadio" class="custom-control-input">
+                <label class="custom-control-label" for="OptionRadio1">New Value</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="SalarySameYears" id="OptionRadio2" name="OptionRadio" class="custom-control-input">
+                <label class="custom-control-label" for="OptionRadio2">Salary Same Years</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="SalaryLastYears" id="OptionRadio3"  name="OptionRadio" class="custom-control-input">
+                <label class="custom-control-label" for="OptionRadio3">Salary Last Years</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="SalarySameYearsP" id="OptionRadio4"  name="OptionRadio" class="custom-control-input">
+                <label class="custom-control-label" for="OptionRadio4">% Salary Years</label>
+            </div>
+
+        </div>
+        <div class="col-md-3 align-self-center text-right d-none d-md-block">
+            <input class="form-control" type="number" value="0" name="PDValue" id="PDValue">
+        </div>
+    </div> <h6 id="OptionRadioCheckValid" style="color: red;"></h6>
+
+           <div class="row">
+
+               <div class="col-md-3 align-self-center text-right d-none d-md-block">
                    <button type="reset" class="btn btn-inverse" onclick="RestDefault()"><i class="fa fa-eraser"></i> Clear</button>
 
-                   <button type="submit" class="btn btn-success">  <i class="fa fa-search"></i> Search</button>
                </div>
+               <div class="col-md-3 align-self-center text-right d-none d-md-block">
+
+                   <button type="button" Onclick="SearchFunction()" class="btn btn-success">  <i class="fa fa-search"></i> Search</button>
+               </div>
+               <div class="col-md-3 align-self-center text-right d-none d-md-block">
+
+                   <button type="button" Onclick="CreateFunction()" class="btn btn-primary">  <i class="fa fa-plus-circle"></i> Create</button>
+               </div>
+
            </div>
 
-}
-<script>   
 
+
+}
+<script>
 
     function RestTableArea() { }
     function SuccessUpdateDepartment() { }
     function FailedUpdateDepartment() { }
     function ClearInputFields() {
+        $('#BonusesOpponentCheckValid').html("");
+        $('#DateCheckValid').html("");
+        $('#OptionRadioCheckValid').html("");
+
         console.log("Clear")
     }
     function RestDefault() {
@@ -99,5 +118,53 @@
         $('#SelcetBonusesOpponent').val("").change();
         $('#FromEmpNo').val("")
         $('#ToEmpNo').val("")
+        $('#FromDate').val("")
+        $('#ToDate').val("")
+        $('#PDValue').val("")
+        $('#BonusesOpponentCheckValid').html("");
+        $('#DateCheckValid').html("");
+        $('#OptionRadioCheckValid').html("");
     }
+    function SearchFunction() {
+        console.log("SearchFunction");
+        $('a[href="#PremiumsDiscountsStaffSearch"]').click();
+        $('#FormPremiumsDiscountsStaffSearch').attr('action', '@(Url.Action("PremiumsDiscountsStaffSearch", "PremiumsDiscountsStaff"))')
+        $('#FormPremiumsDiscountsStaffSearch').attr('data-ajax-update', '#DisplayAreaSearch').submit();
+    }
+    function CreateFunction() {
+      //  console.log("CreateFunction", $('input[name="OptionRadio"]:checked').val());
+        let Validation = CreateValidationFunction();
+        
+        $('a[href="#PremiumsDiscountsStaffCreateNew"]').click();
+        $('#FormPremiumsDiscountsStaffSearch').attr('action', '@(Url.Action("PremiumsDiscountsStaffCreate", "PremiumsDiscountsStaff"))')
+        $('#FormPremiumsDiscountsStaffSearch').attr('data-ajax-update', '#DisplayAreaCreateNew')
+        if (Validation) $('#FormPremiumsDiscountsStaffSearch').submit();
+    }
+    function CreateValidationFunction() {
+        let Validation = false
+        if ($('#SelcetBonusesOpponent').val() == '' ) {
+            $('#BonusesOpponentCheckValid').html("You Should Select What Bonuses Or Opponent You Be Added !! ");
+            return false
+        } else {
+            $('#BonusesOpponentCheckValid').html("");
+            Validation = true
+        }
+        if ($('#FromDate').val() == '' || $('#FromDate').val() == undefined || $('#ToDate').val() == '' || $('#ToDate').val() == undefined) {
+            $('#DateCheckValid').html("You Should Set Date From To !! ");
+            return  false
+        } else {
+            $('#DateCheckValid').html("");
+            Validation = true
+        }
+        if ($('input[name="OptionRadio"]:checked').val() == '' || $('input[name="OptionRadio"]:checked').val() == undefined) {
+            $('#OptionRadioCheckValid').html("You Should Choose Type Of Create And Set Value !! ");
+            return false
+        } else {
+            $('#OptionRadioCheckValid').html("");
+            Validation = true
+        }
+
+        return Validation
+    }
+
 </script>
